@@ -2,8 +2,6 @@ package com.demo.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @SpringBootApplication
 public class EmpServiceApplication {
@@ -12,7 +10,7 @@ public class EmpServiceApplication {
 		SpringApplication.run(EmpServiceApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public DriverManagerDataSource dataSource() {
 		DriverManagerDataSource ds = new DriverManagerDataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
@@ -21,5 +19,5 @@ public class EmpServiceApplication {
 		ds.setPassword("root");
 		return ds;
 
-	}
+	}*/
 }

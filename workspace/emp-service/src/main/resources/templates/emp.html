@@ -7,12 +7,35 @@
 <body>
 	<h1>Employee Registration Page</h1>
 	<hr>
-	<form action="register" method="post" th:object="${emp}">
-	Emp Id: <input type="text" th:field="*{empId}"><br/>
-	Name: <input type="text" th:field="*{name}"><br/>
-	City: <input type="text" th:field="*{city}"><br/>
-	Salary: <input type="text" th:field="*{salary}"><br/>
-	<input type="submit" value="Register">
+	<form action="register" method="post" th:object="${myemp}">
+		<table>
+			<tr>
+				<td>Emp Id:</td>
+				<td><input type="text" th:field="*{empId}"></td>
+
+				<td><span th:if="${#fields.hasErrors('empId')}"
+					th:errors="*{empId}"></span></td>
+			</tr>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}"></td>
+				<td><span th:if="${#fields.hasErrors('name')}"
+					th:errors="*{name}"></span></td>
+			</tr>
+			<tr>
+				<td>City:</td>
+				<td><input type="text" th:field="*{city}"></td>
+				<td><span th:if="${#fields.hasErrors('city')}"
+					th:errors="*{city}"></span></td>
+			</tr>
+			<tr>
+				<td>Salary:</td>
+				<td><input type="text" th:field="*{salary}"></td>
+				<td><span th:if="${#fields.hasErrors('salary')}"
+					th:errors="*{salary}"></span></td>
+			</tr>
+			<input type="submit" value="Register">
+		</table>
 	</form>
 </body>
 </html>

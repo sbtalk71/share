@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div  th:object="${result}">
+	<table>
+		<tr>
+			<td>Emp Id:</td>
+			<td><span th:text="*{empId}"></span></td>
+
+		</tr>
+		<tr>
+			<td>Name:</td>
+			<td><span th:text="*{name}"></span></td>
+
+		</tr>
+		<tr>
+			<td>City:</td>
+			<td><span th:text="*{city}"></span></td>
+
+		</tr>
+		<tr>
+			<td>Salary:</td>
+			<td><span th:text="*{salary}"></span></td>
+
+		</tr>
+
+	</table>
+	</div>
+</body>
+</html>
