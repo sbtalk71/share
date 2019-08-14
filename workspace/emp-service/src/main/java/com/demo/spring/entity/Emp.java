@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class Emp {
 	@Id
 	@Column(name="EMPNO")
-	private int empId;
+	private int id;
 	
 	private String name;
 	
@@ -26,19 +26,21 @@ public class Emp {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Emp(int empId, String name, String city, double salary) {
-		this.empId = empId;
+	public Emp(int id, String name, String city, double salary) {
+		this.id = id;
 		this.name = name;
 		this.city = city;
 		this.salary = salary;
 	}
 
-	public int getEmpId() {
-		return empId;
+	
+
+	public int getId() {
+		return id;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {

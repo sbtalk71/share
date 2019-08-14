@@ -1,5 +1,7 @@
 package com.demo.spring.rest;
 
+
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +38,18 @@ public class EmpRestController {
 	@PostMapping(path="/save",
 			produces= {MediaType.TEXT_XML_VALUE},consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> saveEmp(@RequestBody Emp e){
-		if(repo.existsById(e.getEmpId())) {
-			return ResponseEntity.ok("Employee exists with id "+e.getEmpId());
+		if(repo.existsById(e.getId())) {
+			return ResponseEntity.ok("Employee exists with id "+e.getId());
 		}else {
 			repo.save(e);
-			return ResponseEntity.ok("Employee saved with id "+e.getEmpId());
+			return ResponseEntity.ok("Employee saved with id "+e.getId());
 		}
 		
+	}
+	
+	@GetMapping(path="/list",produces="application/json")
+	public ResponseEntity<List<Emp>> getEmpList(){
+		return ResponseEntity.ok(repo.findAll());
 	}
 
 }

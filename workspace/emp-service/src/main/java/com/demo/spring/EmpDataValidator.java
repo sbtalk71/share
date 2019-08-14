@@ -18,7 +18,7 @@ public class EmpDataValidator implements Validator {
 	@Override
 	public void validate(Object target, Errors errors) {
 		Emp e=(Emp)target;
-		if(e.getEmpId()<100) {
+		if(e.getId()<100) {
 			errors.rejectValue("empId", "invalidId", "Id is not Valid");
 		}if(e.getName().isEmpty()) {
 			errors.rejectValue("name", "nameEmpty", "Name cannot be empty");

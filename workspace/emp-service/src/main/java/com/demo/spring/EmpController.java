@@ -43,9 +43,9 @@ public class EmpController {
 		if (errors.hasErrors()) {
 			mv.setViewName("emp");
 		} else {
-			if (repo.existsById(e.getEmpId())) {
+			if (repo.existsById(e.getId())) {
 				//mv.setViewName("error");
-				throw new EmpExistsException(e.getEmpId());
+				throw new EmpExistsException(e.getId());
 			} else {
 				repo.save(e);
 				mv.setViewName("response");
