@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.demo.hibernate">
+	<class name="Emp" table="EMP">
+		<id name="empId" column="EMPNO">
+			<generator class="increment" />
+		</id>
+		<component name="name" class="Name">
+			<property name="firstName" column="NAME" />
+			<property name="lastName" column="LAST_NAME" />
+		</component>
+		<property name="salary" column="SALARY" />
+		<property name="city" column="ADDRESS" />
+
+		<set name="images" table="IMAGES">
+			<key column="EMPNO" />
+			<composite-element class="Image">
+			<property name="name" column="IMAGE_NAME" />
+			<property name="sizeX" />
+			<property name="sizeY" />
+			</composite-element>
+		</set>
+	</class>
+
+
+</hibernate-mapping>
