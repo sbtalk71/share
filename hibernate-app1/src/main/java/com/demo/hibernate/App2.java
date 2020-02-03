@@ -17,7 +17,7 @@ public class App2 {
 		Session session = sf.openSession();
 		Transaction tx = session.beginTransaction();
 		try {
-			Emp e = new Emp("Kiran", "Bangalore", 56000);
+			Emp e = new Emp("Kiran", "Bangalore", 56000.0);
 			/*
 			 * e.getImages().add("front.jpg"); e.getImages().add("back.jpg");
 			 */

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://com.demo.spring.ws/calculator/"
+	xmlns:tns="http://com.demo.spring.ws/calculator/"
+	elementFormDefault="qualified">
+	<element name="getAddRequest">
+		<complexType>
+			<sequence>
+				<element name="a" type="int" />
+				<element name="b" type="int" />
+			</sequence>
+		</complexType>
+	</element>
+	<element name="getAddResponse">
+		<complexType>
+			<sequence>
+				<element name="result" type="int" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>
